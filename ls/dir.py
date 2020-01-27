@@ -1,5 +1,10 @@
-import os
+import os 
+  
+path = "/home/chris"
+dir_list = os.listdir(path) 
+dir_list_stat = os.stat(path)
 
-for root, dirs, files in os.walk(","):
-    for filename in files:
-        print(filename)
+print("Files and directories in '", path, "' :")  
+  
+print(dir_list) 
+print(dir_list_stat)
