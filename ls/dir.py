@@ -1,6 +1,6 @@
 import os 
   
-path = "/home/chris"
+path = "."
 dir_list = os.listdir(path) 
 dir_list_stat = os.stat(path)
 
