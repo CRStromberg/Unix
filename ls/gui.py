@@ -1,28 +1,32 @@
 import tkinter as tk
-#import os
+import os
 from pathlib import Path
 import glob
+import sys
+
+def searchdir():
+    for item in filels:
+        lbox.insert(tk.END, item)
+
+p = Path(useren)
+
+filels = os.listdir(p)
 
 win = tk.Tk()
 win.title("LS GUI")
 win.geometry('475x275')
 win.configure(bg='#292929')
 
-types = ('*.*')
+userin = tk.Label(win, text="Directory")
+userin.pack()
+useren = tk.Entry(win)
+useren.pack()
 
-p = Path('/home/chris')
-filels = p.iterdir()
-
-files_grabbed = []
-for files in types:
-    files_grabbed.extend(glob.glob(files))
-
-#filels = os.listdir('/')
+search_dir = tk.Button(win, text="Search", command=searchdir)
+search_dir.pack()
 
 lbox = tk.Listbox(win, width=60, height=40, bg='#292929', fg='#dfdfdf')
 lbox.pack()
 
-for item in files_grabbed:
-    lbox.insert(tk.END, item)
- 
+
 win.mainloop()
