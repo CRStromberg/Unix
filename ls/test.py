@@ -36,7 +36,9 @@ def populate_tree(tree, node):
 
 
 def populate_roots(tree):
-    dir = os.path.abspath('.').replace('\\', '/')
+    #Update starts at root
+    #dir = os.path.abspath('.').replace('\\', '/')
+    dir = os.path.abspath('/').replace('\\', '/')
     node = tree.insert('', 'end', text=dir, values=[dir, "directory"])
     populate_tree(tree, node)
 
