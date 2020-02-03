@@ -1,7 +1,4 @@
-"""A directory browser using Ttk Treeview.
-
-Based on the demo found in Tk 8.5 library/demos/browse
-"""
+#Python 2
 import os
 import glob
 import Tkinter
