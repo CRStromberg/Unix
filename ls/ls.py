@@ -1,5 +1,6 @@
 from tkinter import * 
 import os, sys
+from stat import *
   
 def lssearch():
     filels.delete(0,END)
@@ -7,16 +8,15 @@ def lssearch():
     file_search(entdir)
 
 def file_search(temp):
-    path = temp
+    user_path = temp
 
-    dirs = os.listdir( path )
+    dirs = os.listdir( user_path )
+    dirs.sort()
+
     for file in dirs:
-        filels.insert(END, file)
-        size = os.stat(path).st_size
-        print(size)
-        
-
-
+        print(file)
+        print(os.stat(user_path + file).st_size)
+        print(os.stat(user_path + file))
 
 win = Tk()
 win.title("LS GUI")
