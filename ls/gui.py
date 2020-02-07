@@ -8,7 +8,7 @@ def searchdir():
     for item in filels:
         lbox.insert(tk.END, item)
 
-p = Path(useren)
+p = Path('/')
 
 filels = os.listdir(p)
 
